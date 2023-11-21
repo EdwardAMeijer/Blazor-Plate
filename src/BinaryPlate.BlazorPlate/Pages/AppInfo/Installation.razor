@@ -1,0 +1,318 @@
+﻿@page "/appInfo/installation"
+
+<MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">Installation</MudText>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="10">
+        <MudText Typo="Typo.h6" GutterBottom="true">Getting Started</MudText>
+        <MudExpansionPanels Elevation="25">
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What type of architecture design is used in BlazorPlate?">
+                <MudText Typo="Typo.body2" Class="mb-2">BlazorPlate uses Clean Architecture, which is an architecture that emphasizes the separation of concerns and the independence of the layers within an application. This type of architecture helps developers to maintain a clear and organized project structure that is scalable and easy to modify. In Clean Architecture, the application is divided into several layers including the Presentation layer, Application layer, Domain layer, and Infrastructure layer.</MudText>
+                <MudText Typo="Typo.body2" Class="mb-2">BlazorPlate's use of Clean Architecture allows for a clean separation of concerns, making it easy to modify and test the application's functionality. Each layer in the architecture is independent and can be modified without affecting the other layers. This type of design pattern is especially useful for large projects that require frequent updates and modifications.</MudText>
+                <MudText Typo="Typo.body2" Class="mb-2">BlazorPlate also includes several architectural features, such as the use of interfaces and dependency injection, which further enhances the modularity and maintainability of the application.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What are the types of application settings that should be considered before running BlazorPlate?">
+                <MudText Typo="Typo.body2" Class="mb-2">To ensure the smooth operation of BlazorPlate, you should consider the following application settings located in the AppOptions section within the <code>appsettings.json</code> file:</MudText>
+                <MudList>
+                    <MudListItem Icon="@Icons.Material.Filled.Check">
+                        <MudText Typo="Typo.body2" Class="mb-2">Identity Options</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Filled.Check">
+                        <MudText Typo="Typo.body2" Class="mb-2">Token Options</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Filled.Check">
+                        <MudText Typo="Typo.body2" Class="mb-2">File Storage Options</MudText>
+                    </MudListItem>
+                </MudList>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight: 500" Class="mb-2" Text="Where can modifications be made to the default Application Settings in BlazorPlate?">
+                <MudText Typo="Typo.body2" Class="mb-2">You can modify application settings in two ways:</MudText>
+                <MudList>
+                    <MudListItem Icon="@Icons.Material.Filled.Check">
+                        <MudText Typo="Typo.body2" Class="mb-2">From the Settings Menu within the BlazorPlate GUI environment.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Filled.Check">
+                        <MudText Typo="Typo.body2" Class="mb-2">By changing the values in the AppOptions section in the <code>appsettings.json</code> file within the <code>BinaryPlate.WebAPI</code> project.</MudText>
+                    </MudListItem>
+                </MudList>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+        <MudText Typo="Typo.h6" GutterBottom="true" Class="mt-8">Identity Options</MudText>
+        <MudExpansionPanels Elevation="25">
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What can be done with Identity Settings?">
+                <MudChip Label="true" Class="mt-4">UserOptions</MudChip>
+                <MudSimpleTable Hover="true">
+                    <thead>
+
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                AllowedUserNameCharacters
+                            </td>
+                            <td>
+                                Gets or sets the list of allowed characters in the username used to validate user names. Defaults to abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._&#64;+
+                            </td>
+                        </tr>
+                    </tbody>
+                </MudSimpleTable>
+
+                <MudChip Label="true" Class="mt-4">SignInOptions</MudChip>
+                <MudSimpleTable Hover="true">
+                    <thead>
+
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                RequireConfirmedEmail
+                            </td>
+                            <td>
+                                Gets or sets a flag indicating whether a confirmed email address is required to sign in. Defaults to false.
+                            </td>
+                        </tr>
+                    </tbody>
+                </MudSimpleTable>
+
+                <MudChip Label="true" Class="mt-4">PasswordOptions</MudChip>
+                <MudSimpleTable Hover="true">
+                    <thead>
+
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                RequireDigit
+                            </td>
+                            <td>
+                                Gets or sets a flag indicating if passwords must contain a digit. Defaults to true.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                RequiredLength
+                            </td>
+                            <td>
+                                Gets or sets the minimum length a password must be. Defaults to 6.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                RequireLowercase
+                            </td>
+                            <td>
+                                Gets or sets a flag indicating if passwords must contain a lower case ASCII character. Defaults to true.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                RequireNonAlphanumeric
+                            </td>
+                            <td>
+                                Gets or sets a flag indicating if passwords must contain a non-alphanumeric character. Defaults to true.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                RequireUppercase
+                            </td>
+                            <td>
+                                Gets or sets a flag indicating if passwords must contain a upper case ASCII character. Defaults to true.
+                            </td>
+                        </tr>
+                    </tbody>
+                </MudSimpleTable>
+                <MudChip Label="true" Class="mt-4">LockoutOptions</MudChip>
+                <MudSimpleTable Hover="true">
+                    <thead>
+
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                AllowedForNewUsers
+                            </td>
+                            <td>
+                                Gets or sets a flag indicating whether a new user can be locked out. Defaults to true.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                DefaultLockoutTimeSpan
+                            </td>
+                            <td>
+                                Gets or sets the TimeSpan a user is locked out for when a lockout occurs. Defaults to 5 minutes.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                MaxFailedAccessAttempts
+                            </td>
+                            <td>
+                                Gets or sets the number of failed access attempts allowed before a user is locked out, assuming lock out is enabled. Defaults to 5.
+                            </td>
+                        </tr>
+                    </tbody>
+                </MudSimpleTable>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+        <MudText Typo="Typo.h6" GutterBottom="true" Class="mt-8">Token Options</MudText>
+        <MudExpansionPanels Elevation="25">
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What can be done with Token Settings?">
+                <MudSimpleTable Hover="true">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                AccessTokenTimeSpan
+                            </td>
+                            <td>
+                                Gets or sets the TimeSpan an access token is valid. When the TimeSpan is expired. Defaults to 7 days.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                RefreshTokenTimeSpan
+                            </td>
+                            <td>
+                                Gets or sets the TimeSpan a refresh token is valid. Defaults to 7 days.
+                            </td>
+                        </tr>
+                    </tbody>
+                </MudSimpleTable>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What is the difference between Access Token and Refresh Token in BlazorPlate?">
+                <MudText Typo="Typo.body2" Class="mb-2">Access tokens are used in secure applications to ensure a user has access to the appropriate resources. These tokens typically have a limited lifetime to limit the amount of time an attacker can use a stolen token and prevent stale information. When access tokens expire or become invalid, applications need a new access token without prompting the user. To solve this problem, OAuth 2.0 introduced a refresh token. A refresh token allows an application to obtain a new access token without prompting the user.</MudText>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+        <MudText Typo="Typo.h6" GutterBottom="true" Class="mt-8">File Storage Options</MudText>
+        <MudExpansionPanels Elevation="25">
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What can be done with File Storage Settings?">
+                <MudSimpleTable Hover="true">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                StorageType
+                            </td>
+                            <td>
+                                Gets or sets the storage type value. Defaults to 0 which represents On-Premises Storage.
+                            </td>
+                        </tr>
+                    </tbody>
+                </MudSimpleTable>
+            </MudExpansionPanel>
+            <MudExpansionPanels Elevation="25">
+                <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What storage providers are supported by BlazorPlate?">
+                    <MudText Typo="Typo.body2" Class="mb-2">BlazorPlate supports On-Premises Storage and Azure Storage.</MudText>
+                </MudExpansionPanel>
+            </MudExpansionPanels>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What is the difference between On-Premises Storage and Cloud Storage?">
+                <MudText Typo="Typo.body2" Class="mb-2">On-Premises storage and cloud storage reside in two different locations. On-premise storage utilizes in-house hardware and software. That is, the hardware is owned and managed by the enterprise versus a cloud service provider.</MudText>
+                <MudText Typo="Typo.body2" Class="mb-2">Cloud storage resides in remote servers, across town or across the country. It is typically provided by one of the large cloud computing companies such as AWS, Microsoft Azure, or Google Cloud.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="How can I run Azure BLOB Storage along with BlazorPlate on my localhost machine?">
+                <MudText Typo="Typo.body2" Class="mb-2">To run Azure BLOB Storage along with BlazorPlate on your localhost machine, you can use the Azurite emulator, which provides a local environment for testing Azure blob, queue storage, and table storage applications. Follow these steps:</MudText>
+                <MudText Typo="Typo.body2" Class="mb-2">The Azurite open-source emulator provides a free local environment for testing your Azure blob, queue storage, and table storage applications. When you're satisfied with how your application is working locally, switch to using an Azure Storage account in the cloud. The emulator provides cross-platform support on Windows, Linux, and macOS.</MudText>
+                <MudText Typo="Typo.body2" Class="mb-2">Follow the following instructions in order to run Azurite emulator on your localhost machine.</MudText>
+                <MudList>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Install <MudLink Typo="Typo.body2" Href="https://nodejs.org" Target="_blank">Node.js version 8.0 or later.</MudLink></MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Use the npm command <code>npm install -g azurite</code> to install Azurite.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Start Azurite from the command line using the command <code>azurite</code>.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Run BlazorPlate and upload a new avatar picture to update your profile.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Refresh the page and inspect the image path by right-clicking on the avatar picture.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">You should see that the image path points to the Azure BLOB server address, which is <code>http://127.0.0.1:10000/devstoreaccount1</code>.</MudText>
+                    </MudListItem>
+                </MudList>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="How can I run BlazorPlate with a real Azure Storage account in the cloud?">
+                <MudText Typo="Typo.body2" Class="mb-2">To run BlazorPlate with a real Azure Storage account in the cloud, you need to follow these steps:</MudText>
+                <MudList>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Login to your Azure account and obtain a new connection string for Azure BLOB storage.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Open the <code>appsettings.json</code> file located within the <code>BinaryPlate.WebAPI</code> project.</MudText>
+                    </MudListItem>
+                    <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Find the <code>ConnectionStrings:AzureStorageConnection</code> section in the <code>appsettings.json</code> file.</MudText>
+                    </MudListItem> <MudListItem Icon="@Icons.Material.Outlined.Cloud">
+                        <MudText Typo="Typo.body2" Class="mb-2">Replace the <code>"UseDevelopmentStorage=true"</code> value with the real connection string that you've obtained from your Azure account.</MudText>
+                    </MudListItem>
+                </MudList>
+                <MudText Typo="Typo.body2" Class="mb-2">By following these steps, you'll be able to run BlazorPlate with your Azure Storage account in the cloud.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="Can I add a new storage provider in BlazorPlate?">
+                <MudText Typo="Typo.body2" Class="mb-2">Yes! BlazorPlate supports adding multiple storage providers. Simply create a new service class, for example, <code>AwsStorageService</code> that implements the <code>IFileStorageService</code> interface.</MudText>
+            </MudExpansionPanel>
+            <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="How can I adjust the maximum file upload size limit in BlazorPlate?">
+                <MudText Typo="Typo.body2" Class="mb-2">To change the maximum file upload size limit in BlazorPlate, you should update three places:</MudText>
+                <MudListItem Icon="@Icons.Material.Outlined.UploadFile">
+                    <MudText Typo="Typo.body2" Class="mb-2">Update the <code>maxAllowedContentLength</code> value in web.config file located within the <code>BinaryPlate.WebAPI</code> project as shown in the following code snippet.</MudText>
+                    <img width="100%" src="https://blazorplate.net/assets/img/code-screenshots/file-size-webconfig.png" />
+                </MudListItem>
+                <MudListItem Icon="@Icons.Material.Outlined.UploadFile">
+                    <MudText Typo="Typo.body2" Class="mb-2">Update the <code>ValueLengthLimit</code> and <code>MultipartBodyLengthLimit</code> values in the <code>Startup.cs</code> file located within the <code>BinaryPlate.WebAPI</code> project as shown in the following code snippet.</MudText>
+                    <img width="100%" src="https://blazorplate.net/assets/img/code-screenshots/file-size-startup.png" />
+                </MudListItem>
+                <MudListItem Icon="@Icons.Material.Outlined.UploadFile">
+                    <MudText Typo="Typo.body2" Class="mb-2">Update the MaxFileSize value in the Shared/BpUploadFile.razor.cs file located within the  <code>BinaryPlate.BlazorPlate</code> project as shown in the following code snippet.</MudText>
+                    <img width="100%" src="https://blazorplate.net/assets/img/code-screenshots/file-size-bpuploadfile.png" />
+                </MudListItem>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+    [Inject] private IBreadcrumbService BreadcrumbService { get; set; }
+
+    protected override void OnInitialized()
+    {
+        BreadcrumbService.SetBreadcrumbItems(new List<BreadcrumbItem>
+        {
+            new(Resource.Home, "/"),
+            new(Resource.App_Info, "#", true),
+            new(Resource.Installation, "#", true)
+        });
+
+    }
+
+}

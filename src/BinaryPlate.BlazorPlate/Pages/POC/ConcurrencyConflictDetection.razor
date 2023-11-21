@@ -1,0 +1,39 @@
+﻿@page "/poc/ConcurrencyConflictDetection"
+<MudGrid xs="12" sm="12" md="10">
+    <MudText Typo="Typo.h6" GutterBottom="true">@Resource.ConcurrencyConflictDetection</MudText>
+    <MudExpansionPanels Elevation="25">
+        <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What is Concurrency Conflict?">
+            <MudText Typo="Typo.body2" Class="mb-2">Concurrency conflict occurs when multiple users attempt to edit or delete the same record simultaneously. In a multi-user environment, there is a possibility that while one user is making changes, another user may have already modified or deleted the same record. This can lead to record inconsistencies and unintended changes.</MudText>
+        </MudExpansionPanel>
+        <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="What is the Concurrency Conflict Detection Feature in BlazorPlate?">
+            <MudText Typo="Typo.body2" Class="mb-2">The Concurrency Conflict Detection feature in BlazorPlate is a robust mechanism designed to handle situations where multiple users attempt to edit or delete the same record simultaneously. This feature ensures that data integrity is preserved and prevents data loss due to concurrent updates and deletions by multiple users.</MudText>
+        </MudExpansionPanel>
+        <MudExpansionPanel Style="font-weight: 500" Class="mb-2" Text="How BlazorPlate Detects and Handles Concurrency Conflicts?">
+            <MudText Typo="Typo.body2" Class="mb-2">When a user makes changes to a record, BlazorPlate checks if the record has been altered by another user. If a conflict is detected during the edit operation, the system responds with a friendly error message to alert the user about the situation. The message advises the user to reload the page and try again to avoid overwriting the changes made by someone else.</MudText>
+            <MudText Typo="Typo.body2" Class="mb-2">Similarly, during the delete operation, BlazorPlate checks if the record has been deleted by another user. If a conflict is detected, the system responds with a friendly error message to inform the user that the record cannot be deleted as it may have been removed by someone else.</MudText>
+        </MudExpansionPanel>
+        <MudExpansionPanel Style="font-weight:500" Class="mb-2" Text="How can I test the Concurrency Conflict Detection feature in BlazorPlate?">
+            <MudText Typo="Typo.body2" Class="mb-2">You can easily test the Concurrency Conflict Handler feature in different modules within BlazorPlate, such as Users, Roles, and Settings Modules. Here's how to do it:</MudText>
+            <MudListItem Icon="@Icons.Material.Filled.Check">
+                <MudText Typo="Typo.body2" Class="mb-2">Navigate to the User Management Module: Click on the "Roles" menu item in the side navigation menu to access the Roles index page where you can choose a role to edit.</MudText>
+            </MudListItem>
+            <MudListItem Icon="@Icons.Material.Filled.Check">
+                <MudText Typo="Typo.body2" Class="mb-2">Edit a Role in Two Separate Tabs: Open the same role in two different tabs or browsers by navigating to the roles index page, selecting a role, and clicking on the Edit button.</MudText>
+            </MudListItem>
+            <MudListItem Icon="@Icons.Material.Filled.Check">
+                <MudText Typo="Typo.body2" Class="mb-2">Make Changes in the First Tab: In the first tab, make some changes to the role and click the "Save" button.</MudText>
+            </MudListItem>
+            <MudListItem Icon="@Icons.Material.Filled.Check">
+                <MudText Typo="Typo.body2" Class="mb-2">Success Message: The system will respond with a success message, indicating that your changes have been saved successfully.</MudText>
+            </MudListItem> 
+            <MudListItem Icon="@Icons.Material.Filled.Check">
+                <MudText Typo="Typo.body2" Class="mb-2">Edit the Role in the Second Tab: In the second tab, make additional changes to the same role and click the "Save" button.</MudText>
+            </MudListItem>  
+            <MudListItem Icon="@Icons.Material.Filled.Check">
+                <MudText Typo="Typo.body2" Class="mb-2">Conflict Failure Message: The system will now detect a concurrency conflict and respond with a friendly failure message. It will inform you that someone else might have modified the same record you're trying to update. The message will advise you to reload the page and try again to avoid overwriting other user's changes.</MudText>
+            </MudListItem>  
+      
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+</MudGrid>
+

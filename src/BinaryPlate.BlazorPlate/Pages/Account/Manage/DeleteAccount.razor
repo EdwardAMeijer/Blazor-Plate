@@ -1,0 +1,33 @@
+﻿<EditForm Model="DeleteAccountCommand" OnValidSubmit="DeleteUserPersonalData">
+    <EditContextApiExceptionFallback @ref="EditContextApiExceptionFallback" />
+    <FluentValidationValidator />
+    <MudDialog>
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                <MudIcon Icon="@Icons.Material.Filled.DeleteForever" Class="mr-3 mb-n1" />
+                @Resource.Delete_Account
+            </MudText>
+        </TitleContent>
+        <DialogContent>
+            <MudAlert Severity="Severity.Error">@Resource.Are_you_sure_you_want_to_delete_your_account_permanently</MudAlert>
+
+            <MudTextField Label="@Resource.Current_password"
+                          Variant="Variant.Outlined"
+                          @bind-Value="@DeleteAccountCommand.Password"
+                          For="@(() => DeleteAccountCommand.Password)"
+                          InputType="@PasswordInput"
+                          Adornment="Adornment.End"
+                          AdornmentIcon="@PasswordInputIcon"
+                          OnAdornmentClick="TogglePasswordVisibility" />
+        </DialogContent>
+        <DialogActions>
+            <MudButton OnClick="Cancel" Color="Color.Default" Style="float:right" Class="mr-3" Variant="Variant.Filled">@Resource.Cancel</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Style="float:right" Variant="Variant.Filled" Color="Color.Error">@Resource.Delete_my_Account</MudButton>
+        </DialogActions>
+    </MudDialog>
+    <MudExpansionPanel Text="@Resource.Validation_Summary" IsExpanded="true" Disabled="true" HideIcon="true">
+        <MudText Color="@Color.Error">
+            <ValidationSummary />
+        </MudText>
+    </MudExpansionPanel>
+</EditForm>

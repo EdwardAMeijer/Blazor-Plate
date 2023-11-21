@@ -1,0 +1,35 @@
+﻿@if (LoginProvider != ExternalLoginProvider.None)
+{
+    var provider = LoginProvider.ToString().ToLower();
+    var externalLoginClass = $"external-login {provider}-external-login full-width";
+    var iconClass = $"external-login-icon {provider}-external-login-icon";
+
+    <a href="@GetExternalLoginUrl()" class="@externalLoginClass">
+        <span class="@iconClass"></span>
+        @Resource.SignInWith @LoginProvider
+    </a>
+}
+
+@code {
+    [Inject]
+    private IUrlProvider UrlProvider { get; set; }
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    [Parameter]
+    public ExternalLoginProvider LoginProvider { get; set; }
+
+    private string GetExternalLoginUrl()
+    {
+        var subDomain = NavigationManager.GetSubDomain();
+
+        var returnUrl = $"{UrlProvider.BaseClientUrl}{UrlProvider.LoginRedirectRelativePath}";
+
+        var provider = LoginProvider.ToString().ToLower();
+
+        var loginUrl = $"{UrlProvider.BaseApiUrl}account/ExternalLogins/{provider}-account-login?returnurl={returnUrl}";
+
+        return loginUrl;
+    }
+}
+

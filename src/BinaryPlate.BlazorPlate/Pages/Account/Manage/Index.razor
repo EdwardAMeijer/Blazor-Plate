@@ -1,0 +1,37 @@
+﻿@page "/account/manage/index"
+@attribute [Authorize]
+
+<MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">@Resource.My_Account</MudText>
+<AuthorizeView>
+    <Authorized>
+        <MudTabs KeepPanelsAlive="true" Elevation="25" Color="Color.Transparent" Rounded="true" PanelClass="mt-6">
+            <MudTabPanel Text="@Resource.Avatar" Icon="@Icons.Material.Filled.Photo">
+                <Avatar />
+            </MudTabPanel>
+            <MudTabPanel Text="@Resource.Profile" Icon="@Icons.Material.Filled.Person">
+                <Profile />
+            </MudTabPanel>
+            <MudTabPanel Text="@Resource.Email" Icon="@Icons.Material.Filled.Mail">
+                <ChangeEmail />
+            </MudTabPanel>
+            @if (context.User.Claims.FirstOrDefault(c => c.Type == "HasPassword")?.Value == "false")
+            {
+                <MudTabPanel Text="@Resource.Set_Password" Icon="@Icons.Material.Filled.VpnKey">
+                    <SetPassword />
+                </MudTabPanel>
+            }
+            else
+            {
+                <MudTabPanel Text="@Resource.Change_Password" Icon="@Icons.Material.Filled.VpnKey">
+                    <ChangePassword />
+                </MudTabPanel>
+            }
+            <MudTabPanel Text="@Resource.Two_Factor_Authentication" Icon="@Icons.Material.Filled.Security">
+                <TwoFactorAuthentication />
+            </MudTabPanel>
+            <MudTabPanel Text="@Resource.Danger_Zone" Icon="@Icons.Material.Filled.Dangerous">
+                <DangerZone />
+            </MudTabPanel>
+        </MudTabs>
+    </Authorized>
+</AuthorizeView>
